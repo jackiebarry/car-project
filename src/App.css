@@ -1,0 +1,75 @@
+#root {
+  max-width: 2800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: darkolivegreen;
+}
+
+.title {
+  padding: 2em;
+  color: floralwhite;
+}
+
+/* .navButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+} */
+
+.thumbnails {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: row;
+  padding: 1.5em;
+  align-content: center;
+  object-fit: contain;
+  align-items: space-evenly;
+}
+
+.thumbnail {
+  display: flexbox;
+  flex-direction: row;
+  align-items: space-evenly;
+  height: 3em;
+  width: auto;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  object-fit: contain;
+}
+.thumbnail:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.thumbnail.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.icon {
+  position: relative;
+  float: right;
+  color-scheme: blue;
+}
+
+/* @keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
+/* .card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
