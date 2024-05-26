@@ -18,7 +18,10 @@ const Resources = () => {
         <Card>
           <CardBody>
             <p>
-              <a href="investopedia.com/articles/pf/07/neworusedcar.asp/">
+              <a
+                href="https://www.caranddriver.com/research/a31520182/new-vs-used-car/"
+                target="_blank"
+              >
                 {" "}
                 New vs Used{" "}
               </a>
@@ -28,7 +31,10 @@ const Resources = () => {
         <Card>
           <CardBody>
             <p>
-              <a href="https://www.autotrader.ca/research/subaru/forester/2020/">
+              <a
+                href="https://www.autotrader.ca/research/subaru/forester/2020/"
+                target="_blank"
+              >
                 {" "}
                 Comparing Trim Levels{" "}
               </a>
@@ -38,7 +44,10 @@ const Resources = () => {
         <Card>
           <CardBody>
             <p>
-              <a href="https://www.consumerreports.org/cars/buying-a-car/beat-four-square-and-other-car-dealership-sales-tactics-a7590220303/">
+              <a
+                href="https://www.consumerreports.org/cars/buying-a-car/beat-four-square-and-other-car-dealership-sales-tactics-a7590220303/"
+                target="_blank"
+              >
                 {" "}
                 Dealer Four Square - Sales Technique{" "}
               </a>
