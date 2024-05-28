@@ -54,6 +54,19 @@ const Resources = () => {
             </p>
           </CardBody>
         </Card>
+        <Card>
+          <CardBody>
+            <p>
+              <a
+                href="https://www.consumerreports.org/cars/how-to-inspect-a-used-car-a1377126659/"
+                target="_blank"
+              >
+                {" "}
+                Expert Tips on Inspecting a Used Car{" "}
+              </a>
+            </p>
+          </CardBody>
+        </Card>
       </SimpleGrid>
     </>
   );
