@@ -1,10 +1,12 @@
 import {
+  Box,
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Grid,
   GridItem,
+  Heading,
 } from "@chakra-ui/react";
 import GoHome from "./GoHome";
 import { Divider } from "@chakra-ui/react";
@@ -15,8 +17,10 @@ const FAQs = () => {
       <div>
         <GoHome path={"/"} />
       </div>
-      <Divider />
-      <Grid gap={6} templateRows="repeat(auto-fill, minmax(200px, 1fr))">
+      <Box position="relative" padding="10">
+        <Divider />
+      </Box>
+      <Grid gap={4} templateRows="repeat(auto-fill, minmax(200px, 1fr))">
         <GridItem>
           <Card
             direction={{ base: "column", sm: "row" }}
@@ -24,19 +28,20 @@ const FAQs = () => {
             variant="outline"
           >
             <CardHeader>
-              <h1 size="sm"> New vs Used</h1>
+              <Heading as="h4" size="md">
+                {" "}
+                New vs Used
+              </Heading>
             </CardHeader>
             <CardBody>
               <p>
                 The age old question - to buy new or used? What are the main
-                differences?
-                <br />
-                Buying a vehicle is a very personal decision, and most people
-                will have different priorities. Personally, I opted for a
-                certified pre-owned car. Buying a car that is a few years older
-                (2020) allowed me to get a higher trim level which had all the
-                features I wanted (the main one being a heated steering wheel).{" "}
-                <br />
+                differences? Buying a vehicle is a very personal decision, and
+                most people will have different priorities. Personally, I opted
+                for a certified pre-owned car. Buying a car that is a few years
+                older (2020) allowed me to get a higher trim level which had all
+                the features I wanted (the main one being a heated steering
+                wheel).{" "}
                 {/* <a href="investopedia.com/articles/pf/07/neworusedcar.asp"> More information here </a> */}
               </p>
             </CardBody>
@@ -50,7 +55,10 @@ const FAQs = () => {
             variant="outline"
           >
             <CardHeader>
-              <h1 size="sm"> MSRP</h1>
+              <Heading as="h4" size="md">
+                {" "}
+                MSRP
+              </Heading>
             </CardHeader>
             <CardBody>
               <p>
@@ -70,7 +78,10 @@ const FAQs = () => {
             variant="outline"
           >
             <CardHeader>
-              <h1 size="sm"> Trim</h1>
+              <Heading as="h4" size="md">
+                {" "}
+                Trim
+              </Heading>
             </CardHeader>
             <CardBody>
               <p>

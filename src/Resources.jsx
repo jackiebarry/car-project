@@ -1,6 +1,6 @@
 import { Card, CardBody, SimpleGrid } from "@chakra-ui/react";
 import GoHome from "./GoHome";
-import { Divider } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import React from "react";
 
@@ -10,7 +10,9 @@ const Resources = () => {
       <div>
         <GoHome path={"/"} />
       </div>
-      <Divider />
+      <Box position="relative" padding="10">
+        <Divider />
+      </Box>
       <SimpleGrid
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"

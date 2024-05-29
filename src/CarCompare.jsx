@@ -1,4 +1,4 @@
-import { Divider } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import CarSearch from "./CarSearch";
 
 import GoHome from "./GoHome";
@@ -9,7 +9,9 @@ const CarCompare = () => {
       <div>
         <GoHome path={"/"} />
       </div>
-      <Divider />
+      <Box position="relative" padding="10">
+        <Divider />
+      </Box>{" "}
       <CarSearch />
     </>
   );

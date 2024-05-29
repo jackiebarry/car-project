@@ -42,7 +42,11 @@ const CarSearch = () => {
                 return <option value={year}>{year}</option>;
               })}
           </Select>
-          <Select placeholder="Select Vehicle Make" onChange={onMakeSelect} size="sm">
+          <Select
+            placeholder="Select Vehicle Make"
+            onChange={onMakeSelect}
+            size="sm"
+          >
             {Array().fill(MakesArray).map}
             const make = MakesArray.name; return{" "}
             <option value={make}>{make}</option>;
