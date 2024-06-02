@@ -12,6 +12,11 @@ import NavBurger from "./NavBurger";
 const Home = () => {
   return (
     <>
+      <Box>
+        <div className="title" padding="10">
+          <Heading>Car Compare</Heading>
+        </div>
+      </Box>
       <NavBurger />
 
       <Box position="relative" padding="10">
@@ -68,9 +73,6 @@ const Home = () => {
           </Card>
         </GridItem>
       </Grid>
-      <div className="title" padding="10">
-        <Heading>Car Compare</Heading>
-      </div>
     </>
   );
 };
