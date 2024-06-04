@@ -188,27 +188,9 @@ const FAQs = () => {
                 salvage title, odometer readings). All the details provided in a
                 CARFAX report can help a buyer determine if they are getting a
                 good deal on the purchase of a vehicle- for example, a car that
-                has reported accidents and sustained damage should be sold for a
-                reduced price.
+                has reported accidents and sustained damage as a result should
+                be sold for a reduced price.
               </p>
-            </CardBody>
-            <CardFooter>{/* <Button>View here</Button> */}</CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card
-            direction={{ base: "column", sm: "row" }}
-            overflow="hidden"
-            variant="outline"
-          >
-            <CardHeader>
-              <Heading as="h4" size="md">
-                {" "}
-                Vehicle Size{" "}
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <p></p>
             </CardBody>
             <CardFooter>{/* <Button>View here</Button> */}</CardFooter>
           </Card>
@@ -226,7 +208,18 @@ const FAQs = () => {
               </Heading>
             </CardHeader>
             <CardBody>
-              <p></p>
+              <p>
+                One of the most important safety features on a vehicle is its
+                tires. Having a good set of tires which are appropriate for the
+                season is crucial to safe driving. Despite their name, in many
+                locations all-season tires should be called three season tires,
+                as they are not a suitable choice for cold winter driving. A big
+                benefit to all-seasons is that they stay on all year, which
+                decreases the cost associated with having two sets of tires and
+                needing to change them twice a year. The major downside to
+                all-seasons is they don't have the same cold-weather performance
+                that winter tires do.{" "}
+              </p>
             </CardBody>
             <CardFooter>{/* <Button>View here</Button> */}</CardFooter>
           </Card>
@@ -240,11 +233,20 @@ const FAQs = () => {
             <CardHeader>
               <Heading as="h4" size="md">
                 {" "}
-                Rust Proofing{" "}
+                Rustproofing{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p></p>
+              <p>
+                Rustproofing refers to the process of preventing rust on a
+                vehicle through the use of specific chemical applications and
+                services. In order to achieve the protection against rust or
+                corrosion, a barrrier is applied between the vehicle's body and
+                the external elements. There are a number of benefits to
+                rustproofing a vehicle including extending it's life cycle,
+                lowering repair costs, increasing resale value and it has a
+                positive environmental impact.{" "}
+              </p>
             </CardBody>
             <CardFooter>{/* <Button>View here</Button> */}</CardFooter>
           </Card>

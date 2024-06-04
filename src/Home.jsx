@@ -23,7 +23,6 @@ const Home = () => {
         <Divider />
       </Box>
       <Grid
-        h="200px"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(2, 1fr)"
         gap={4}
