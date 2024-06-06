@@ -1,6 +1,6 @@
 import { Input, HStack, Button, Select } from "@chakra-ui/react";
 import { useState } from "react";
-import { fetchCarModels } from "./HandleAPI";
+import { fetchCarMakes } from "./HandleAPI";
 import MakesArray from "./MakesArray";
 
 const CarSearch = () => {
@@ -9,16 +9,16 @@ const CarSearch = () => {
   const [make, setMake] = useState([]);
 
   console.log(models);
-  console.log(make);
+  // console.log(make);
 
   const onYearSelect = async (event) => {
     const selectedYear = event.target.value;
     setYear(selectedYear);
-    const models = await fetchCarModels(selectedYear);
+    const models = await fetchCarMakes(selectedYear);
     setModels(models);
   };
 
-  const onMakeSelect = (event) => {
+  const onMakeSelect = async (event) => {
     const selectedMake = event.target.value;
     setMake(selectedMake);
   };
@@ -39,7 +39,12 @@ const CarSearch = () => {
               .fill(2015)
               .map((element, index) => {
                 const year = element + index;
-                return <option value={year}>{year}</option>;
+                const key = element + index;
+                return (
+                  <option value={year} key={key}>
+                    {year}
+                  </option>
+                );
               })}
           </Select>
           <Select
@@ -47,9 +52,9 @@ const CarSearch = () => {
             onChange={onMakeSelect}
             size="sm"
           >
-            {Array().fill(MakesArray).map}
+            {/* {Array().fill(MakesArray).map}
             const make = MakesArray.name; return{" "}
-            <option value={make}>{make}</option>;
+            <option value={make}>{make}</option>; */}
           </Select>
           <Input placeholder="Select Vehicle Model" size="sm" />
           <Button
