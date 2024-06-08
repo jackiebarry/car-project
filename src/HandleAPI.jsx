@@ -19,23 +19,34 @@ export async function fetchCarMakes(year) {
       `https://car-api2.p.rapidapi.com/api/makes?direction=asc&sort=id&year=${year}&verbose=yes`,
       requestOptions
     );
-    const result = await response.text();
-    console.log(result);
-    // console.log(result.id[1]);
+    const result = await response.json();
+    // console.log(result);
+    const makes = result.data.map((item) => item.name);
+
+    // console.log(makes);
+    // for (const name in result.data) {
+    //   console.log(name);
+    // }
+    return makes;
   } catch (error) {
     console.error(error);
+    return [];
   }
 }
 
-// export async function fetchCarModels(make) {
-//   try {
-//     const response = await fetch(
-//       `https://car-api2.p.rapidapi.com/api/models?direction=asc&sort=id&make=${make}&verbose=yes`,
-//       requestOptions
-//     );
-//     const result = await response.text();
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+export async function fetchCarModels(make, year) {
+  try {
+    const response = await fetch(
+      `https://car-api2.p.rapidapi.com/api/models?direction=asc&sort=id&make=${make}&verbose=yes&year=${year}`,
+      requestOptions
+    );
+    const result = await response.json();
+    // console.log(result);
+    const models = result.data.map((item) => item.name);
+    // console.log(models);
+    return models;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
