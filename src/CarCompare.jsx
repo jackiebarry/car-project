@@ -13,6 +13,9 @@ const CarCompare = () => {
         <Divider />
       </Box>{" "}
       <CarSearch />
+      <Box position="relative" padding="10">
+        <Divider />
+      </Box>{" "}
     </>
   );
 };

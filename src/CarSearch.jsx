@@ -1,12 +1,13 @@
-import { Input, HStack, Button, Select } from "@chakra-ui/react";
+import { HStack, Select } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { fetchCarMakes, fetchCarModels } from "./HandleAPI";
+import { fetchCarImages, fetchCarMakes, fetchCarModels } from "./HandleAPI";
 
 const CarSearch = () => {
   const [year, setYear] = useState(2015);
   const [models, setModels] = useState([]);
   const [makes, setMakes] = useState([]);
   const [make, setMake] = useState("");
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -26,8 +27,12 @@ const CarSearch = () => {
     getCarModels();
   }, [year, make]);
 
-  // console.log(models);
-  // console.log(make);
+  //   useEffect(() => {
+  //     const getCarImages = await fetchCarImages(year, make, models);
+  // setImage(image);
+
+  // getCarImages();
+  //   }, [year, make, models]);
 
   const onYearSelect = async (event) => {
     const selectedYear = event.target.value;
@@ -54,9 +59,10 @@ const CarSearch = () => {
     console.log(models);
   };
 
-  const onSearchClick = () => {
-    alert(year, makes);
-  };
+  // const onSearchClick = () => {
+  //   alert(year, makes);
+  // };
+
   return (
     <>
       <div>
@@ -64,7 +70,7 @@ const CarSearch = () => {
           <Select
             placeholder="Select Vehicle Year"
             onChange={onYearSelect}
-            size="sm"
+            size="lg"
           >
             {Array(6)
               .fill(2015)
@@ -81,7 +87,7 @@ const CarSearch = () => {
           <Select
             placeholder="Select Vehicle Make"
             onChange={onMakeSelect}
-            size="sm"
+            size="lg"
           >
             {makes.map((make, index) => (
               <option key={index} value={make}>
@@ -92,7 +98,7 @@ const CarSearch = () => {
           <Select
             placeholder="Select Vehicle Model"
             onChange={onModelSelect}
-            size="sm"
+            size="lg"
           >
             {models.map((model, index) => (
               <option key={index} value={model}>
@@ -100,15 +106,15 @@ const CarSearch = () => {
               </option>
             ))}
           </Select>
-          <Button
+          {/* <Button
             // isLoading
             colorScheme="blackAlpha"
             variant="outline"
-            size="md"
+            size="lg"
             onClick={onSearchClick}
           >
             Search
-          </Button>
+          </Button> */}
         </HStack>
       </div>
     </>
