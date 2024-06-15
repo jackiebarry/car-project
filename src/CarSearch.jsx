@@ -12,6 +12,8 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarMakes = async () => {
       const makes = await fetchCarMakes(year);
+      console.log(typeof make);
+      console.log(make);
       setMakes(makes);
     };
 
@@ -21,11 +23,13 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarModels = async () => {
       const models = await fetchCarModels(year, make);
+      console.log(typeof models);
+      console.log(models);
       setModels(models);
     };
 
     getCarModels();
-  }, [year, make]);
+  }, [make]);
 
   //   useEffect(() => {
   //     const getCarImages = await fetchCarImages(year, make, models);

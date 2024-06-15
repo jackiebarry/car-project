@@ -20,7 +20,7 @@ const FAQs = () => {
       <Box position="relative" padding="10">
         <Divider />
       </Box>
-      <Grid gap={4} templateRows="repeat(auto-fill, minmax(200px, 1fr))">
+      <Grid gap={5} templateRows="repeat(auto-fill, minmax(200px, 1fr))">
         <GridItem>
           <Card
             direction={{ base: "column", sm: "row" }}
@@ -42,8 +42,7 @@ const FAQs = () => {
                 for a certified pre-owned car. Buying a car that is a few years
                 older (2020) allowed me to get a higher trim level which had all
                 the features I wanted (the main one being a heated steering
-                wheel).{" "}
-                {/* <a href="investopedia.com/articles/pf/07/neworusedcar.asp"> More information here </a> */}
+                wheel).
               </p>
             </CardBody>
             <CardFooter>{/* <Button>View here</Button> */}</CardFooter>
