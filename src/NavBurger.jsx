@@ -8,11 +8,13 @@ import GoCompare from "./GoCompare";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 import {
-  IconButton,
+  Box,
   Drawer,
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
+  IconButton,
+  Stack,
   useDisclosure,
 } from "@chakra-ui/react";
 
@@ -34,10 +36,20 @@ function NavBurger() {
         <DrawerContent>
           <DrawerBody>
             <div className="navButtons">
-              <GoSave path={"./SavedCars"} />
-              <GotQuestions path={"./FAQs"} />
-              <GetInfo path={"./Resources"} />
-              <GoCompare path={"./CarCompare"} />
+              <Stack spacing="24px">
+                <box>
+                  <GoSave path={"./SavedCars"} />
+                </box>
+                <Box>
+                  <GotQuestions path={"./FAQs"} />
+                </Box>
+                <Box>
+                  <GetInfo path={"./Resources"} />
+                </Box>
+                <Box>
+                  <GoCompare path={"./CarCompare"} />
+                </Box>
+              </Stack>
             </div>
           </DrawerBody>
         </DrawerContent>

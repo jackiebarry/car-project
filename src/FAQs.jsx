@@ -20,7 +20,12 @@ const FAQs = () => {
       <Box position="relative" padding="10">
         <Divider />
       </Box>
-      <Grid gap={5} templateRows="repeat(auto-fill, minmax(200px, 1fr))">
+      <Grid
+        gap={5}
+        padding={10}
+        // minH="100%"
+        templateRows="repeat(auto-fill, minmax(1fr))"
+      >
         <GridItem>
           <Card
             direction={{ base: "column", sm: "row" }}

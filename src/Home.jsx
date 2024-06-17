@@ -30,7 +30,7 @@ const Home = () => {
         <GridItem>
           <Card>
             <CardHeader>
-              <Heading size="sm"> CAR</Heading>
+              <Heading size="sm">CAR</Heading>
             </CardHeader>
             <CardBody>
               <Car className="thumbnail" imgUrl={carThumbnail} />
@@ -41,7 +41,7 @@ const Home = () => {
         <GridItem>
           <Card>
             <CardHeader>
-              <Heading size="sm"> SUV</Heading>
+              <Heading size="sm">SUV</Heading>
             </CardHeader>
             <CardBody>
               <Car className="thumbnail" imgUrl={suvThumbnail} />
@@ -52,7 +52,7 @@ const Home = () => {
         <GridItem>
           <Card>
             <CardHeader>
-              <Heading size="sm"> TRUCK</Heading>
+              <Heading size="sm">TRUCK</Heading>
             </CardHeader>
             <CardBody>
               <Car className="thumbnail" imgUrl={truckThumbnail} />
@@ -63,7 +63,7 @@ const Home = () => {
         <GridItem>
           <Card>
             <CardHeader>
-              <Heading size="sm"> CAR</Heading>
+              <Heading size="sm">VAN</Heading>
             </CardHeader>
             <CardBody>
               <Car className="thumbnail" imgUrl={vanThumbnail} />

@@ -1,4 +1,12 @@
-import { HStack, Select } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  HStack,
+  Select,
+  CardHeader,
+  Heading,
+  CardFooter,
+} from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { fetchCarImages, fetchCarMakes, fetchCarModels } from "./HandleAPI";
 
@@ -7,7 +15,8 @@ const CarSearch = () => {
   const [models, setModels] = useState([]);
   const [makes, setMakes] = useState([]);
   const [make, setMake] = useState("");
-  const [image, setImage] = useState("");
+  const [model, setModel] = useState(null);
+  // const [image, setImage] = useState("");
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -56,11 +65,9 @@ const CarSearch = () => {
 
   const onModelSelect = async (event) => {
     const selectedModel = event.target.value;
-    setModels(selectedModel);
-    console.log(selectedModel);
-    const models = await fetchCarModels(selectedMake, year);
-    setModels(models);
-    console.log(models);
+    setModel(selectedModel);
+
+    // todo: rewrite to feed into serp API
   };
 
   // const onSearchClick = () => {
@@ -120,6 +127,18 @@ const CarSearch = () => {
             Search
           </Button> */}
         </HStack>
+        {model && (
+          <HStack>
+            <Card>
+              <CardHeader>
+                <Heading size="sm">
+                  {year} {make} {model}
+                </Heading>
+              </CardHeader>
+              <CardBody></CardBody>
+            </Card>
+          </HStack>
+        )}
       </div>
     </>
   );

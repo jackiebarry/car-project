@@ -1,11 +1,4 @@
-import {
-  AbsoluteCenter,
-  Button,
-  Card,
-  CardBody,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
+import { AbsoluteCenter, Button, Grid, GridItem } from "@chakra-ui/react";
 import GoHome from "./GoHome";
 import { Box, Divider } from "@chakra-ui/react";
 import React from "react";
