@@ -16,7 +16,7 @@ const CarSearch = () => {
   const [makes, setMakes] = useState([]);
   const [make, setMake] = useState("");
   const [model, setModel] = useState(null);
-  // const [image, setImage] = useState("");
+  const [images, setImages] = useState("");
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -66,6 +66,9 @@ const CarSearch = () => {
   const onModelSelect = async (event) => {
     const selectedModel = event.target.value;
     setModel(selectedModel);
+    const images = await fetchCarImages(selectedModel, year, make);
+    setImages(images);
+    console.log(images);
 
     // todo: rewrite to feed into serp API
   };

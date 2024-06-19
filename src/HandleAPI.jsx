@@ -62,12 +62,13 @@ export async function fetchCarModels(make, year) {
 export async function fetchCarImages(year, make, model) {
   try {
     const response = await fetch(
-      `'https://serp-api1.p.rapidapi.com/search?q=${year + make + model}'`,
+      `'https://serp-api1.p.rapidapi.com/search.json?q=${(year, make, model)}'`,
       carImageOptions
     );
     const result = await response.json();
     console.log(result);
   } catch (error) {
     console.error(error);
+    return [];
   }
 }
