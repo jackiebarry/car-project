@@ -62,7 +62,9 @@ export async function fetchCarModels(make, year) {
 export async function fetchCarImages(year, make, model) {
   try {
     const response = await fetch(
-      `'https://serp-api1.p.rapidapi.com/search.json?q=${(year, make, model)}'`,
+      `'https://serp-api1.p.rapidapi.com/search?engine=google_images?q=${
+        (year, make, model)
+      }'`,
       carImageOptions
     );
     const result = await response.json();
