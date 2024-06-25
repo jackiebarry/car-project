@@ -17,7 +17,7 @@ const carImageOptions = {
   method: "GET",
   headers: {
     "x-rapidapi-key": "12989ced08msh2b523603de5ccd7p1c52a5jsn7e33be4174a6",
-    "x-rapidapi-host": "serp-api1.p.rapidapi.com",
+    "x-rapidapi-host": "real-time-image-search.p.rapidapi.com",
   },
 };
 
@@ -59,12 +59,13 @@ export async function fetchCarModels(make, year) {
   }
 }
 
-export async function fetchCarImages(year, make, model) {
+export async function fetchCarImages(year, make, selectedModel) {
   try {
+    console.log(year, make, selectedModel);
     const response = await fetch(
-      `'https://serp-api1.p.rapidapi.com/search?engine=google_images?q=${
-        (year, make, model)
-      }'`,
+      `https://real-time-image-search.p.rapidapi.com/search?query=${
+        (year, make, selectedModel)
+      }`,
       carImageOptions
     );
     const result = await response.json();
