@@ -32,14 +32,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 New vs Used
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 The age old question - to buy new or used? What are the main
                 differences? There are pros and cons to both options. At the end
                 of the day, buying a vehicle is a very personal decision, and
@@ -59,14 +59,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 MSRP
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 MSRP - which stands for Manufacturer's Suggested Retail Price -
                 is the price that a manufacturer recommends that stores sell
                 their product at. Some retailers may also refer to the MSRP as
@@ -82,14 +82,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 Trim
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 When people talk about the trim level of a vehicle, they are
                 referring to the different variations of a vehicle. Almost every
                 vehicle comes in several different versions. Each version, or
@@ -110,14 +110,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 Warranty{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 When purchasing a car through a dealership, warranty will be a
                 factor to consider. All new cars will come with factory
                 warranties. Most manufacturers also provide warranties for their
@@ -142,14 +142,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 Mileage{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 When purchasing a used vehicle, people will often highlight the
                 importance of finding a car with low-mileage. Mileage is
                 referring to the number of miles or kilometers a car has been
@@ -173,14 +173,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 CARFAX Report{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 CARFAX Vehicle reports can provide critical details about a
                 vehicle's history to allow a buyer to make an informed decision.
                 CARFAX reports include details about many things, including
@@ -205,14 +205,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 Tires{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 One of the most important safety features on a vehicle is its
                 tires. Having a good set of tires which are appropriate for the
                 season is crucial to safe driving. Despite their name, in many
@@ -234,14 +234,14 @@ const FAQs = () => {
             overflow="hidden"
             variant="outline"
           >
-            <CardHeader>
+            <CardHeader width="250px">
               <Heading as="h4" size="md">
                 {" "}
                 Rustproofing{" "}
               </Heading>
             </CardHeader>
             <CardBody>
-              <p>
+              <p align="left">
                 Rustproofing refers to the process of preventing rust on a
                 vehicle through the use of specific chemical applications and
                 services. In order to achieve the protection against rust or

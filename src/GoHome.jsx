@@ -11,7 +11,7 @@ const GoHome = ({ path }) => {
   return (
     <Button
       leftIcon={<IoHomeOutline />}
-      colorScheme="blackAlpha"
+      colorScheme="whiteAlpha"
       variant="outline"
       onClick={routeChange}
     >

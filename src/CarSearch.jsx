@@ -5,8 +5,8 @@ import {
   Select,
   CardHeader,
   Heading,
-  CardFooter,
 } from "@chakra-ui/react";
+import CarImage from "./CarImage";
 import { useState, useEffect } from "react";
 import { fetchCarImages, fetchCarMakes, fetchCarModels } from "./HandleAPI";
 
@@ -22,8 +22,8 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarMakes = async () => {
       const makes = await fetchCarMakes(year);
-      console.log(typeof make);
-      console.log(make);
+      // console.log(typeof make);
+      // console.log(make);
       setMakes(makes);
     };
 
@@ -33,35 +33,26 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarModels = async () => {
       const models = await fetchCarModels(year, make);
-      console.log(typeof models);
-      console.log(models);
+      // console.log(typeof models);
+      // console.log(models);
       setModels(models);
     };
 
     getCarModels();
   }, [make]);
 
-  //   useEffect(() => {
-  //     const getCarImages = await fetchCarImages(year, make, models);
-  // setImage(image);
-
-  // getCarImages();
-  //   }, [year, make, models]);
-
   const onYearSelect = async (event) => {
     const selectedYear = event.target.value;
     setYear(selectedYear);
-    // const models = await fetchCarMakes(selectedYear);
-    // setModels(models);
   };
 
   const onMakeSelect = async (event) => {
     const selectedMake = event.target.value;
     setMake(selectedMake);
-    console.log(selectedMake);
+    // console.log(selectedMake);
     const models = await fetchCarModels(selectedMake, year);
     setModels(models);
-    console.log(models);
+    // console.log(models);
   };
 
   const onModelSelect = async (event) => {
@@ -69,12 +60,9 @@ const CarSearch = () => {
     setModel(selectedModel);
     const images = await fetchCarImages(selectedModel, year, make);
     setImages(images);
-    console.log(images);
+    setImage(image);
+    console.log(image);
   };
-
-  // const onSearchClick = () => {
-  //   alert(year, makes);
-  // };
 
   return (
     <>
@@ -119,25 +107,18 @@ const CarSearch = () => {
               </option>
             ))}
           </Select>
-          {/* <Button
-            // isLoading
-            colorScheme="blackAlpha"
-            variant="outline"
-            size="lg"
-            onClick={onSearchClick}
-          >
-            Search
-          </Button> */}
         </HStack>
         {model && (
-          <HStack>
+          <HStack spacing={3} padding={5}>
             <Card>
               <CardHeader>
                 <Heading size="sm">
                   {year} {make} {model}
                 </Heading>
               </CardHeader>
-              <CardBody></CardBody>
+              <CardBody>
+                <CarImage image={image} />
+              </CardBody>
             </Card>
           </HStack>
         )}

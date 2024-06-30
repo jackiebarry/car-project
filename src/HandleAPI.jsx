@@ -69,7 +69,8 @@ export async function fetchCarImages(year, make, selectedModel) {
       carImageOptions
     );
     const result = await response.json();
-    console.log(result);
+    const image = result.data[1].thumbnail_url;
+    return image;
   } catch (error) {
     console.error(error);
     return [];
