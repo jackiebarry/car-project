@@ -16,7 +16,6 @@ const CarSearch = () => {
   const [makes, setMakes] = useState([]);
   const [make, setMake] = useState("");
   const [model, setModel] = useState(null);
-  const [images, setImages] = useState("");
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const CarSearch = () => {
 
   useEffect(() => {
     const getCarModels = async () => {
-      const models = await fetchCarModels(year, make);
+      const models = await fetchCarModels(make, year);
       // console.log(typeof models);
       // console.log(models);
       setModels(models);
@@ -58,9 +57,7 @@ const CarSearch = () => {
   const onModelSelect = async (event) => {
     const selectedModel = event.target.value;
     setModel(selectedModel);
-    const images = await fetchCarImages(selectedModel, year, make);
-    setImages(images);
-    setImage(image);
+    setImage(await fetchCarImages(year, make, selectedModel));
     console.log(image);
   };
 
@@ -72,6 +69,7 @@ const CarSearch = () => {
             placeholder="Select Vehicle Year"
             onChange={onYearSelect}
             size="lg"
+            color="#ED64A6"
           >
             {Array(6)
               .fill(2015)
@@ -89,6 +87,7 @@ const CarSearch = () => {
             placeholder="Select Vehicle Make"
             onChange={onMakeSelect}
             size="lg"
+            color="#ED64A6"
           >
             {makes.map((make, index) => (
               <option key={index} value={make}>
@@ -100,6 +99,7 @@ const CarSearch = () => {
             placeholder="Select Vehicle Model"
             onChange={onModelSelect}
             size="lg"
+            color="#ED64A6"
           >
             {models.map((model, index) => (
               <option key={index} value={model}>
@@ -117,7 +117,7 @@ const CarSearch = () => {
                 </Heading>
               </CardHeader>
               <CardBody>
-                <CarImage image={image} />
+                <CarImage imageUrl={image} />
               </CardBody>
             </Card>
           </HStack>

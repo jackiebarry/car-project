@@ -37,9 +37,9 @@ function NavBurger() {
           <DrawerBody>
             <div className="navButtons">
               <Stack spacing="24px">
-                <box>
+                <Box>
                   <GoSave path={"./SavedCars"} />
-                </box>
+                </Box>
                 <Box>
                   <GotQuestions path={"./FAQs"} />
                 </Box>
