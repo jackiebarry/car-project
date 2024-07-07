@@ -8,7 +8,18 @@ import {
 } from "@chakra-ui/react";
 import CarImage from "./CarImage";
 import { useState, useEffect } from "react";
-import { fetchCarImages, fetchCarMakes, fetchCarModels } from "./HandleAPI";
+import {
+  fetchCarImages,
+  fetchCarMakes,
+  fetchCarModels,
+  fetchCarTrims,
+} from "./HandleAPI";
+import CarLoading from "./CarLoading";
+import carThumbnail from "./images/carThumbnail.png";
+
+import carLoading from "./images/carLoading.gif";
+
+const backupImageUrl = carThumbnail; // Replace with the actual path to your backup image
 
 const CarSearch = () => {
   const [year, setYear] = useState(2015);
@@ -16,7 +27,10 @@ const CarSearch = () => {
   const [makes, setMakes] = useState([]);
   const [make, setMake] = useState("");
   const [model, setModel] = useState(null);
+  const [trims, setTrims] = useState([]);
+  const [trim, setTrim] = useState(null);
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -40,6 +54,17 @@ const CarSearch = () => {
     getCarModels();
   }, [make]);
 
+  useEffect(() => {
+    const getCarTrims = async () => {
+      const trims = await fetchCarTrims(year, make, model);
+      // console.log(typeof models);
+      // console.log(models);
+      setTrims(trims);
+    };
+
+    getCarTrims();
+  }, [model]);
+
   const onYearSelect = async (event) => {
     const selectedYear = event.target.value;
     setYear(selectedYear);
@@ -57,7 +82,14 @@ const CarSearch = () => {
   const onModelSelect = async (event) => {
     const selectedModel = event.target.value;
     setModel(selectedModel);
-    setImage(await fetchCarImages(year, make, selectedModel));
+  };
+
+  const onTrimSelect = async (event) => {
+    setLoading(true); // Show the loading GIF
+    const selectedTrim = event.target.value;
+    setTrim(selectedTrim);
+    setImage(await fetchCarTrims(year, make, model, selectedTrim));
+    setLoading(false); // Hide the loading GIF
     console.log(image);
   };
 
@@ -107,17 +139,32 @@ const CarSearch = () => {
               </option>
             ))}
           </Select>
+          <Select
+            placeholder="Select Vehicle Trim Level"
+            onChange={onTrimSelect}
+            size="lg"
+            color="#ED64A6"
+          >
+            {trims.map((trim, index) => (
+              <option key={index} value={trim}>
+                {trim}
+              </option>
+            ))}
+          </Select>
         </HStack>
-        {model && (
+        {trim && (
           <HStack spacing={3} padding={5}>
             <Card>
               <CardHeader>
                 <Heading size="sm">
-                  {year} {make} {model}
+                  {year} {make} {model} {trim}
                 </Heading>
               </CardHeader>
               <CardBody>
-                <CarImage imageUrl={image} />
+                {loading && <CarLoading gifUrl={carLoading} />}
+                {!loading && (
+                  <CarImage imageUrl={image} backupImageUrl={backupImageUrl} />
+                )}
               </CardBody>
             </Card>
           </HStack>

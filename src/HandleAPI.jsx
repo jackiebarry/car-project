@@ -3,6 +3,9 @@
 //   "Authorization",
 //   "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjYXJhcGkuYXBwIiwic3ViIjoiNWM3ZTNmMGMtYTYxOC00OGI1LWE5NTYtOTM5OGY5NTY1OGZiIiwiYXVkIjoiNWM3ZTNmMGMtYTYxOC00OGI1LWE5NTYtOTM5OGY5NTY1OGZiIiwiZXhwIjoxNzE2NDY5Nzk5LCJpYXQiOjE3MTU4NjQ5OTksImp0aSI6IjQwYmQ1MTM3LWQyZWEtNGNhZS04OGY4LTkwZmEzNjcwZDc5NCIsInVzZXIiOnsic3Vic2NyaWJlZCI6ZmFsc2UsInN1YnNjcmlwdGlvbiI6bnVsbCwicmF0ZV9saW1pdF90eXBlIjoiaGFyZCIsImFkZG9ucyI6eyJhbnRpcXVlX3ZlaGljbGVzIjpmYWxzZSwiZGF0YV9mZWVkIjpmYWxzZX19fQ.kfDLj7-8WfIXRG9aumibMTpAxtXGWEtb_we_oVWssN4"
 // );
+
+import { useState } from "react";
+
 const carRequestOptions = {
   method: "GET",
   headers: {
@@ -58,12 +61,28 @@ export async function fetchCarModels(make, year) {
   }
 }
 
-export async function fetchCarImages(year, make, selectedModel) {
+export async function fetchCarTrims(year, make, model) {
+  try {
+    console.log(year, make, model);
+    const response = await fetch(
+      `https://car-api2.p.rapidapi.com/api/trims?direction=asc&sort=id&year=${year}&verbose=yes&make=${make}&model=${model}`,
+      carRequestOptions
+    );
+    const result = await response.json();
+    console.log(result);
+    const trims = result.data.map((item) => item.name);
+    return trims;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+export async function fetchCarImages(year, make, model, selectedTrim) {
   try {
     console.log(year, make, selectedModel);
     const response = await fetch(
       `https://real-time-image-search.p.rapidapi.com/search?query=${
-        (year, make, selectedModel)
+        year + make + model + selectedTrim
       }`,
       carImageOptions
     );

@@ -1,8 +1,7 @@
-function CarImage({ imageUrl }) {
+function CarImage({ imageUrl, backupImageUrl }) {
   return (
     <>
-      {/* if else statement for thumbnail exists or not? */}
-      <img src={imageUrl} />
+      <img src={imageUrl || backupImageUrl} alt="car" />
     </>
   );
 }
