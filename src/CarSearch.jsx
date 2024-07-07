@@ -88,7 +88,7 @@ const CarSearch = () => {
     setLoading(true); // Show the loading GIF
     const selectedTrim = event.target.value;
     setTrim(selectedTrim);
-    setImage(await fetchCarTrims(year, make, model, selectedTrim));
+    setImage(await fetchCarImages(year, make, model, selectedTrim));
     setLoading(false); // Hide the loading GIF
     console.log(image);
   };
@@ -98,7 +98,7 @@ const CarSearch = () => {
       <div>
         <HStack spacing={3}>
           <Select
-            placeholder="Select Vehicle Year"
+            placeholder="Year"
             onChange={onYearSelect}
             size="lg"
             color="#ED64A6"
@@ -116,7 +116,7 @@ const CarSearch = () => {
               })}
           </Select>
           <Select
-            placeholder="Select Vehicle Make"
+            placeholder="Make"
             onChange={onMakeSelect}
             size="lg"
             color="#ED64A6"
@@ -128,7 +128,7 @@ const CarSearch = () => {
             ))}
           </Select>
           <Select
-            placeholder="Select Vehicle Model"
+            placeholder="Model"
             onChange={onModelSelect}
             size="lg"
             color="#ED64A6"
@@ -140,7 +140,7 @@ const CarSearch = () => {
             ))}
           </Select>
           <Select
-            placeholder="Select Vehicle Trim Level"
+            placeholder="Trim Level"
             onChange={onTrimSelect}
             size="lg"
             color="#ED64A6"

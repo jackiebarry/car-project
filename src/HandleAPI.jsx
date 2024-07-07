@@ -79,7 +79,7 @@ export async function fetchCarTrims(year, make, model) {
 }
 export async function fetchCarImages(year, make, model, selectedTrim) {
   try {
-    console.log(year, make, selectedModel);
+    console.log(year, make, model, selectedTrim);
     const response = await fetch(
       `https://real-time-image-search.p.rapidapi.com/search?query=${
         year + make + model + selectedTrim
