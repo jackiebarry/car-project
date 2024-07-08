@@ -77,6 +77,24 @@ export async function fetchCarTrims(year, make, model) {
     return [];
   }
 }
+
+// export async function fetchCarDetails(year, make, model, selectedTrim) {
+//   try {
+//     console.log(year, make, model, selectedTrim);
+//     const response = await fetch(
+//       `https://car-api2.p.rapidapi.com/api/trims?direction=asc&sort=id&year=${year}&verbose=yes&make=${make}&model=${model}`,
+//       carRequestOptions
+//     );
+//     const result = await response.json();
+//     console.log(result);
+//     const trims = result.data.map((item) => item.name);
+//     return trims;
+//   } catch (error) {
+//     console.error(error);
+//     return [];
+//   }
+// }
+
 export async function fetchCarImages(year, make, model, selectedTrim) {
   try {
     console.log(year, make, model, selectedTrim);

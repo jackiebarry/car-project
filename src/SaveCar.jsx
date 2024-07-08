@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import { TbHeartPlus } from "react-icons/io5";
+import { TbHeartPlus } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 
 const SaveCar = ({ path }) => {
@@ -12,12 +12,10 @@ const SaveCar = ({ path }) => {
   return (
     <Button
       leftIcon={<TbHeartPlus />}
-      colorScheme="whiteAlpha"
+      colorScheme="blackAlpha"
       variant="outline"
       onClick={saveCar}
-    >
-      Home
-    </Button>
+    ></Button>
   );
 };
 

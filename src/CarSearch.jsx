@@ -5,6 +5,7 @@ import {
   Select,
   CardHeader,
   Heading,
+  CardFooter,
 } from "@chakra-ui/react";
 import CarImage from "./CarImage";
 import { useState, useEffect } from "react";
@@ -18,8 +19,10 @@ import CarLoading from "./CarLoading";
 import carThumbnail from "./images/carThumbnail.png";
 
 import carLoading from "./images/carLoading.gif";
+import CarDetails from "./CarDetails";
+import SaveCar from "./SaveCar";
 
-const backupImageUrl = carThumbnail; // Replace with the actual path to your backup image
+const backupImageUrl = carThumbnail;
 
 const CarSearch = () => {
   const [year, setYear] = useState(2015);
@@ -31,6 +34,7 @@ const CarSearch = () => {
   const [trim, setTrim] = useState(null);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -166,6 +170,9 @@ const CarSearch = () => {
                   <CarImage imageUrl={image} backupImageUrl={backupImageUrl} />
                 )}
               </CardBody>
+              <CardFooter>
+                <SaveCar path="/SavedCars" />
+              </CardFooter>
             </Card>
           </HStack>
         )}
