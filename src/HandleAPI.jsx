@@ -70,7 +70,8 @@ export async function fetchCarTrims(year, make, model) {
     );
     const result = await response.json();
     console.log(result);
-    const trims = result.data.map((item) => item.name);
+    const allTrims = result.data.map((item) => item.name);
+    const trims = Array.from(new Set(allTrims));
     return trims;
   } catch (error) {
     console.error(error);
