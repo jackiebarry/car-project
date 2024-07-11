@@ -1,40 +1,25 @@
-import {
-  Card,
-  CardBody,
-  HStack,
-  Select,
-  CardHeader,
-  Heading,
-  CardFooter,
-} from "@chakra-ui/react";
-import CarImage from "./CarImage";
+import { HStack, Select } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import {
   fetchCarImages,
   fetchCarMakes,
   fetchCarModels,
   fetchCarTrims,
-} from "./HandleAPI";
-import CarLoading from "./CarLoading";
-import carThumbnail from "./images/carThumbnail.png";
+} from "./HandleAPI.jsx";
 
-import carLoading from "./images/carLoading.gif";
-import CarDetails from "./CarDetails";
-import SaveCar from "./SaveCar";
-
-const backupImageUrl = carThumbnail;
+import CarDetails from "./CarDetails.jsx";
 
 const CarSearch = () => {
   const [year, setYear] = useState(2015);
   const [models, setModels] = useState([]);
   const [makes, setMakes] = useState([]);
-  const [make, setMake] = useState("");
+  const [make, setMake] = useState(null);
   const [model, setModel] = useState(null);
   const [trims, setTrims] = useState([]);
   const [trim, setTrim] = useState(null);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
-  
+  const allFieldsFilledOut = !!trim;
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -70,11 +55,25 @@ const CarSearch = () => {
   }, [model]);
 
   const onYearSelect = async (event) => {
+    if (allFieldsFilledOut) {
+      setMake(null);
+      setMakes([]);
+      setModel(null);
+      setModels([]);
+      setTrim(null);
+      setTrims([]);
+    }
     const selectedYear = event.target.value;
     setYear(selectedYear);
   };
 
   const onMakeSelect = async (event) => {
+    if (allFieldsFilledOut) {
+      setModel(null);
+      setModels([]);
+      setTrim(null);
+      setTrims([]);
+    }
     const selectedMake = event.target.value;
     setMake(selectedMake);
     // console.log(selectedMake);
@@ -84,6 +83,10 @@ const CarSearch = () => {
   };
 
   const onModelSelect = async (event) => {
+    if (allFieldsFilledOut) {
+      setTrim(null);
+      setTrims([]);
+    }
     const selectedModel = event.target.value;
     setModel(selectedModel);
   };
@@ -96,6 +99,9 @@ const CarSearch = () => {
     setLoading(false); // Hide the loading GIF
     console.log(image);
   };
+
+  const carDetails = { year, make, model, trim, loading, image };
+  console.log(make);
 
   return (
     <>
@@ -125,9 +131,9 @@ const CarSearch = () => {
             size="lg"
             color="#ED64A6"
           >
-            {makes.map((make, index) => (
-              <option key={index} value={make}>
-                {make}
+            {makes.map((theMake, index) => (
+              <option key={index} value={theMake}>
+                {theMake}
               </option>
             ))}
           </Select>
@@ -156,26 +162,9 @@ const CarSearch = () => {
             ))}
           </Select>
         </HStack>
-        {trim && (
-          <HStack spacing={3} padding={5}>
-            <Card>
-              <CardHeader>
-                <Heading size="sm">
-                  {year} {make} {model} {trim}
-                </Heading>
-              </CardHeader>
-              <CardBody>
-                {loading && <CarLoading gifUrl={carLoading} />}
-                {!loading && (
-                  <CarImage imageUrl={image} backupImageUrl={backupImageUrl} />
-                )}
-              </CardBody>
-              <CardFooter>
-                <SaveCar path="/SavedCars" />
-              </CardFooter>
-            </Card>
-          </HStack>
-        )}
+        <HStack spacing={3} padding={5}>
+          <CarDetails {...carDetails} />
+        </HStack>
       </div>
     </>
   );

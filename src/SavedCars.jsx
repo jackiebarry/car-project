@@ -6,14 +6,16 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { Box, Divider } from "@chakra-ui/react";
+import CarDetails from "./CarDetails.jsx";
 
-import GoHome from "./GoHome";
+import GoHome from "./GoHome.jsx";
 
 import foresterBlue from "./images/foresterBlue.jpeg";
 import mazdaCX5 from "./images/mazdaCX5.jpeg";
 import toyotaRAV4 from "./images/toyotaRAV4.jpeg";
 
 const SavedCars = () => {
+  const savedCars = JSON.parse(localStorage.getItem("savedCars")) || [];
   return (
     <>
       <div>
@@ -26,6 +28,9 @@ const SavedCars = () => {
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
       >
+        {savedCars.map((car, index) => (
+          <CarDetails {...car} key={index} />
+        ))}
         <Card>
           <CardHeader>
             <h1 size="sm"> 2020 Subaru Forester</h1>

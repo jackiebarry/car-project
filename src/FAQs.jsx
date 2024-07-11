@@ -8,7 +8,7 @@ import {
   GridItem,
   Heading,
 } from "@chakra-ui/react";
-import GoHome from "./GoHome";
+import GoHome from "./GoHome.jsx";
 import { Divider } from "@chakra-ui/react";
 
 const FAQs = () => {
@@ -38,8 +38,8 @@ const FAQs = () => {
                 New vs Used
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 The age old question - to buy new or used? What are the main
                 differences? There are pros and cons to both options. At the end
                 of the day, buying a vehicle is a very personal decision, and
@@ -65,8 +65,8 @@ const FAQs = () => {
                 MSRP
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 MSRP - which stands for Manufacturer's Suggested Retail Price -
                 is the price that a manufacturer recommends that stores sell
                 their product at. Some retailers may also refer to the MSRP as
@@ -88,8 +88,8 @@ const FAQs = () => {
                 Trim
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 When people talk about the trim level of a vehicle, they are
                 referring to the different variations of a vehicle. Almost every
                 vehicle comes in several different versions. Each version, or
@@ -116,8 +116,8 @@ const FAQs = () => {
                 Warranty{" "}
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 When purchasing a car through a dealership, warranty will be a
                 factor to consider. All new cars will come with factory
                 warranties. Most manufacturers also provide warranties for their
@@ -148,8 +148,8 @@ const FAQs = () => {
                 Mileage{" "}
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 When purchasing a used vehicle, people will often highlight the
                 importance of finding a car with low-mileage. Mileage is
                 referring to the number of miles or kilometers a car has been
@@ -179,8 +179,8 @@ const FAQs = () => {
                 CARFAX Report{" "}
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 CARFAX Vehicle reports can provide critical details about a
                 vehicle's history to allow a buyer to make an informed decision.
                 CARFAX reports include details about many things, including
@@ -211,8 +211,8 @@ const FAQs = () => {
                 Tires{" "}
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 One of the most important safety features on a vehicle is its
                 tires. Having a good set of tires which are appropriate for the
                 season is crucial to safe driving. Despite their name, in many
@@ -240,8 +240,8 @@ const FAQs = () => {
                 Rustproofing{" "}
               </Heading>
             </CardHeader>
-            <CardBody>
-              <p align="left">
+            <CardBody align="left">
+              <p>
                 Rustproofing refers to the process of preventing rust on a
                 vehicle through the use of specific chemical applications and
                 services. In order to achieve the protection against rust or
