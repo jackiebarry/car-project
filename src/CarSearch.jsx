@@ -1,6 +1,7 @@
 import { HStack, Select } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import {
+  fetchCarDetails,
   fetchCarImages,
   fetchCarMakes,
   fetchCarModels,
@@ -17,6 +18,7 @@ const CarSearch = () => {
   const [model, setModel] = useState(null);
   const [trims, setTrims] = useState([]);
   const [trim, setTrim] = useState(null);
+  const [details, setDetails] = useState({});
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const allFieldsFilledOut = !!trim;
@@ -95,12 +97,15 @@ const CarSearch = () => {
     setLoading(true); // Show the loading GIF
     const selectedTrim = event.target.value;
     setTrim(selectedTrim);
+    console.log(selectedTrim);
     setImage(await fetchCarImages(year, make, model, selectedTrim));
+    setDetails(await fetchCarDetails(year, make, model, selectedTrim));
+    console.log(details);
     setLoading(false); // Hide the loading GIF
     console.log(image);
   };
 
-  const carDetails = { year, make, model, trim, loading, image };
+  const carDetails = { year, make, model, trim, loading, image, details };
   console.log(make);
 
   return (

@@ -6,16 +6,16 @@
   background-color: black;
 }
 
+.thumbnail-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the entire area */
+}
+
 .title {
   padding: 2em;
   color: floralwhite;
 }
-
-/* .navButtons {
-  display: flex;
-  flex-direction: row;
-  align-items: space-evenly;
-} */
 
 .thumbnails {
   max-width: fit-content;
@@ -50,26 +50,3 @@
   float: right;
   color-scheme: blue;
 }
-
-/* @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-
-/* .card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */

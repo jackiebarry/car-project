@@ -4,8 +4,10 @@ import {
   CardBody,
   CardFooter,
   SimpleGrid,
+  Heading,
+  Box,
+  Divider,
 } from "@chakra-ui/react";
-import { Box, Divider } from "@chakra-ui/react";
 import CarDetails from "./CarDetails.jsx";
 
 import GoHome from "./GoHome.jsx";
@@ -33,7 +35,7 @@ const SavedCars = () => {
         ))}
         <Card>
           <CardHeader>
-            <h1 size="sm"> 2020 Subaru Forester</h1>
+            <Heading size="sm"> 2020 Subaru Forester</Heading>
           </CardHeader>
           <CardBody>
             <img
@@ -53,7 +55,7 @@ const SavedCars = () => {
         </Card>
         <Card>
           <CardHeader>
-            <h1 size="sm"> 2020 Mazda CX-5</h1>
+            <Heading size="sm"> 2020 Mazda CX-5</Heading>
           </CardHeader>
           <CardBody>
             <img
@@ -73,7 +75,7 @@ const SavedCars = () => {
         </Card>
         <Card>
           <CardHeader>
-            <h1 size="sm">2020 Toyota RAV4</h1>
+            <Heading size="sm">2020 Toyota RAV4</Heading>
           </CardHeader>
           <CardBody>
             <img

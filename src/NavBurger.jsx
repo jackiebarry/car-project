@@ -1,9 +1,9 @@
 import React from "react";
 
-import GoSave from "./GoSave";
-import GotQuestions from "./GotQuestions";
-import GetInfo from "./GetInfo";
-import GoCompare from "./GoCompare";
+import GoSave from "./GoSave.jsx";
+import GotQuestions from "./GotQuestions.jsx";
+import GetInfo from "./GetInfo.jsx";
+import GoCompare from "./GoCompare.jsx";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -34,7 +34,7 @@ function NavBurger() {
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerBody>
+          <DrawerBody mt={50}>
             <div className="navButtons">
               <Stack spacing="24px">
                 <Box>

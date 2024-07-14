@@ -1,13 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "./Home";
-import SavedCars from "./SavedCars";
-// import SaveCar from "./SaveCar";
-import FAQs from "./FAQs";
-import Resources from "./Resources";
-import CarCompare from "./CarCompare";
-
-// const [savedCar, setSavedCar] = useState(null);
+import Home from "./Home.jsx";
+import SavedCars from "./SavedCars.jsx";
+import FAQs from "./FAQs.jsx";
+import Resources from "./Resources.jsx";
+import CarCompare from "./CarCompare.jsx";
 
 const router = createBrowserRouter([
   {

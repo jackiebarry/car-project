@@ -7,9 +7,9 @@ import {
   Grid,
   GridItem,
   Heading,
+  Divider,
 } from "@chakra-ui/react";
 import GoHome from "./GoHome.jsx";
-import { Divider } from "@chakra-ui/react";
 
 const FAQs = () => {
   return (
