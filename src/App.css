@@ -12,6 +12,22 @@
   object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the entire area */
 }
 
+.car-image {
+  align-items: center;
+  padding: 10;
+}
+
+.title {
+  padding: 5;
+  width: 400px;
+  height: 400px;
+}
+
+.car-overview {
+  text-align: left;
+  padding: 5;
+}
+
 .title {
   padding: 2em;
   color: floralwhite;

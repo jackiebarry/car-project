@@ -3,7 +3,6 @@ import React from "react";
 import GoSave from "./GoSave.jsx";
 import GotQuestions from "./GotQuestions.jsx";
 import GetInfo from "./GetInfo.jsx";
-import GoCompare from "./GoCompare.jsx";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -46,9 +45,7 @@ function NavBurger() {
                 <Box>
                   <GetInfo path={"./Resources"} />
                 </Box>
-                <Box>
-                  <GoCompare path={"./CarCompare"} />
-                </Box>
+              
               </Stack>
             </div>
           </DrawerBody>

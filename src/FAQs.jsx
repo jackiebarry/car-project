@@ -8,15 +8,18 @@ import {
   GridItem,
   Heading,
   Divider,
+  Flex,
 } from "@chakra-ui/react";
 import GoHome from "./GoHome.jsx";
 
 const FAQs = () => {
   return (
     <>
-      <div>
-        <GoHome path={"/"} />
-      </div>
+      <Flex justify="flex-start" padding="5">
+        <div>
+          <GoHome path={"/"} />
+        </div>
+      </Flex>
       <Box position="relative" padding="10">
         <Divider />
       </Box>

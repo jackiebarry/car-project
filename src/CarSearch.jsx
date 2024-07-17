@@ -1,5 +1,5 @@
 import { HStack, Select } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer, useRef } from "react";
 import {
   fetchCarDetails,
   fetchCarImages,
@@ -22,6 +22,8 @@ const CarSearch = () => {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const allFieldsFilledOut = !!trim;
+
+  const [savedCars, setSavedCars] = useState([]);
 
   useEffect(() => {
     const getCarMakes = async () => {
@@ -105,7 +107,16 @@ const CarSearch = () => {
     console.log(image);
   };
 
-  const carDetails = { year, make, model, trim, loading, image, details };
+  const carDetails = {
+    year,
+    make,
+    model,
+    trim,
+    loading,
+    image,
+    details,
+    saved: false,
+  };
   console.log(make);
 
   return (
@@ -168,7 +179,7 @@ const CarSearch = () => {
           </Select>
         </HStack>
         <HStack spacing={3} padding={5}>
-          <CarDetails {...carDetails} />
+          <CarDetails car={carDetails} setSavedCars={setSavedCars} />
         </HStack>
       </div>
     </>

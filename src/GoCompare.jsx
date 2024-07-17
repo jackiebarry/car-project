@@ -1,5 +1,4 @@
 import { Button } from "@chakra-ui/react";
-import { ViewIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 
 const GoCompare = ({ path }) => {
@@ -11,12 +10,12 @@ const GoCompare = ({ path }) => {
 
   return (
     <Button
-      leftIcon={<ViewIcon />}
-      colorScheme="blackAlpha"
+      size="lg"
+      colorScheme="pink"
       variant="outline"
       onClick={routeChange}
     >
-      Compare Cars
+      Start Comparing Now
     </Button>
   );
 };

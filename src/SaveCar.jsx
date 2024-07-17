@@ -5,10 +5,12 @@ import { TbHeartPlus } from "react-icons/tb";
 // save relevant data in localstorage on car save
 // load saved cars in saved cars page
 
-const SaveCar = (car) => {
+const SaveCar = ({ car, setSavedCars }) => {
   const saveCar = () => {
     const savedCars = JSON.parse(localStorage.getItem("savedCars")) || [];
-    savedCars.push(car.car);
+    const newCar = { ...car, saved: true };
+    savedCars.push(newCar);
+    setSavedCars(savedCars);
     localStorage.setItem("savedCars", JSON.stringify(savedCars));
   };
 

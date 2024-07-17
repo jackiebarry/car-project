@@ -1,7 +1,13 @@
-import { AbsoluteCenter, Button, Grid, GridItem } from "@chakra-ui/react";
-import GoHome from "./GoHome";
-import { Box, Divider } from "@chakra-ui/react";
-import React from "react";
+import {
+  AbsoluteCenter,
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Divider,
+  Flex,
+} from "@chakra-ui/react";
+import GoHome from "./GoHome.jsx";
 
 const NavigateLocHref = ({ url, linkTitle }) => {
   // ok to use window back
@@ -12,9 +18,11 @@ const NavigateLocHref = ({ url, linkTitle }) => {
 const Resources = () => {
   return (
     <>
-      <div>
-        <GoHome path={"/"} />
-      </div>
+      <Flex justify="flex-start" padding="5">
+        <div>
+          <GoHome path={"/"} />
+        </div>
+      </Flex>
       <Box position="relative" padding="10">
         <Divider />
         <AbsoluteCenter bg="white" px="4">

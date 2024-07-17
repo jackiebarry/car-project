@@ -5,24 +5,38 @@ import { Card, CardBody, Box, Divider, Flex } from "@chakra-ui/react";
 import autoAllyThumbnail from "./images/autoAllyThumbnail.png";
 import JackieSubaru from "./images/JackieSubaru.png";
 
+import AutoAlly from "./images/AutoAlly.mp4";
+
+import GoCompare from "./GoCompare.jsx";
+
+import LoopingVideo from "./LoopingVideo.jsx";
+
 import NavBurger from "./NavBurger.jsx";
 import Thumbnail from "./Thumbnail.jsx";
 
 const Home = () => {
   return (
     <>
-      <Flex justify="flex-start" padding="5">
+      <Flex justify="flex-start" padding="2">
         <NavBurger />
       </Flex>
-
-      <Box position="relative" padding="5">
+      <Box position="relative" padding="2">
         <Divider />
       </Box>
-      <Box padding="10" align="center">
+      <Box padding="5" align="center">
         <div className="title">
           <Logo imgUrl={autoAllyThumbnail} />
         </div>
       </Box>
+      <Box position="relative" padding="5">
+        <Divider />
+      </Box>
+      <Flex padding="5" justify="center">
+        <GoCompare path={"./CarCompare"} />
+      </Flex>
+      <Flex padding="5" justify="center">
+        <LoopingVideo src={AutoAlly} width="1200" height="600" />
+      </Flex>
       <Box position="relative" padding="5">
         <Divider />
       </Box>
@@ -62,7 +76,7 @@ const Home = () => {
               source for useful information to know when entering into the land
               of buying a used car. I am hoping it will make the overall process
               feel a little less overwhelming so that people can feel confident
-              and knowledgeable when dealing with dealerships or private
+              and knowledgeable when interacting with dealerships or private
               sellers!
             </p>
           </CardBody>
