@@ -45,7 +45,6 @@ function NavBurger() {
                 <Box>
                   <GetInfo path={"./Resources"} />
                 </Box>
-              
               </Stack>
             </div>
           </DrawerBody>

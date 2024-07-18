@@ -22,13 +22,7 @@ export async function fetchCarMakes(year) {
       carRequestOptions
     );
     const result = await response.json();
-    // console.log(result);
     const makes = result.data.map((item) => item.name);
-
-    // console.log(makes);
-    // for (const name in result.data) {
-    //   console.log(name);
-    // }
     return makes;
   } catch (error) {
     console.error(error);
@@ -43,9 +37,7 @@ export async function fetchCarModels(make, year) {
       carRequestOptions
     );
     const result = await response.json();
-    // console.log(result);
     const models = result.data.map((item) => item.name);
-    // console.log(models);
     return models;
   } catch (error) {
     console.error(error);
@@ -65,7 +57,6 @@ export async function fetchCarTrims(year, make, model) {
     const allTrims = result.data.map((item) => item.name);
     const trims = Array.from(new Set(allTrims));
 
-    // put following into local storage
 
     const allDescriptions = result.data.map((item) => item.description);
     const descriptions = Array.from(new Set(allDescriptions));

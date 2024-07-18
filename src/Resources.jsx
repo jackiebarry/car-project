@@ -10,7 +10,6 @@ import {
 import GoHome from "./GoHome.jsx";
 
 const NavigateLocHref = ({ url, linkTitle }) => {
-  // ok to use window back
   const navigate = () => (window.location.href = url);
   return <Button onClick={navigate}>{linkTitle}</Button>;
 };

@@ -1,5 +1,5 @@
 import { HStack, Select } from "@chakra-ui/react";
-import { useState, useEffect, useReducer, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   fetchCarDetails,
   fetchCarImages,
@@ -28,8 +28,6 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarMakes = async () => {
       const makes = await fetchCarMakes(year);
-      // console.log(typeof make);
-      // console.log(make);
       setMakes(makes);
     };
 
@@ -39,8 +37,6 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarModels = async () => {
       const models = await fetchCarModels(make, year);
-      // console.log(typeof models);
-      // console.log(models);
       setModels(models);
     };
 
@@ -50,8 +46,6 @@ const CarSearch = () => {
   useEffect(() => {
     const getCarTrims = async () => {
       const trims = await fetchCarTrims(year, make, model);
-      // console.log(typeof models);
-      // console.log(models);
       setTrims(trims);
     };
 
@@ -80,10 +74,8 @@ const CarSearch = () => {
     }
     const selectedMake = event.target.value;
     setMake(selectedMake);
-    // console.log(selectedMake);
     const models = await fetchCarModels(selectedMake, year);
     setModels(models);
-    // console.log(models);
   };
 
   const onModelSelect = async (event) => {
@@ -96,14 +88,14 @@ const CarSearch = () => {
   };
 
   const onTrimSelect = async (event) => {
-    setLoading(true); // Show the loading GIF
+    setLoading(true);
     const selectedTrim = event.target.value;
     setTrim(selectedTrim);
     console.log(selectedTrim);
     setImage(await fetchCarImages(year, make, model, selectedTrim));
     setDetails(await fetchCarDetails(year, make, model, selectedTrim));
     console.log(details);
-    setLoading(false); // Hide the loading GIF
+    setLoading(false);
     console.log(image);
   };
 
