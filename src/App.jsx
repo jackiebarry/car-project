@@ -1,21 +1,22 @@
-import { useState } from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
+// import React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 
-import './App.css'
+import "./App.css";
 
-import router from "./Routes";
+import router from "./Routes.jsx";
 
 import { RouterProvider } from "react-router-dom";
 
 function App() {
-
+  // return <div>goodbye</div>;
   return (
-<ChakraProvider>
+    <ChakraProvider>
       <>
-      <RouterProvider router={router} />
+        yoyoyooyoyoyo
+        <RouterProvider router={router} />
       </>
     </ChakraProvider>
-  )
+  );
 }
 
-export default App
+export default App;

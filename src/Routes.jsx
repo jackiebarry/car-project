@@ -6,29 +6,34 @@ import FAQs from "./FAQs.jsx";
 import Resources from "./Resources.jsx";
 import CarCompare from "./CarCompare.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+    },
 
-  {
-    path: "/SavedCars",
-    element: <SavedCars />,
-  },
+    {
+      path: "/SavedCars",
+      element: <SavedCars />,
+    },
 
+    {
+      path: "/FAQs",
+      element: <FAQs />,
+    },
+    {
+      path: "/Resources",
+      element: <Resources />,
+    },
+    {
+      path: "/CarCompare",
+      element: <CarCompare />,
+    },
+  ],
   {
-    path: "/FAQs",
-    element: <FAQs />,
-  },
-  {
-    path: "/Resources",
-    element: <Resources />,
-  },
-  {
-    path: "/CarCompare",
-    element: <CarCompare />,
-  },
-]);
+    basename: "/car-project",
+  }
+);
 
 export default router;
