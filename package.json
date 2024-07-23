@@ -1,7 +1,7 @@
 {
   "name": "car-project",
   "private": true,
-  "homepage": "https://jackiebarry.github.io/car-project/",
+  "homepage": "https://jackiebarry.github.io/car-project/#/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
