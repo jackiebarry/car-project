@@ -12,7 +12,6 @@ function App() {
   return (
     <ChakraProvider>
       <>
-        yoyoyooyoyoyo
         <RouterProvider router={router} />
       </>
     </ChakraProvider>
