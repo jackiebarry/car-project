@@ -9,7 +9,7 @@ import CarCompare from "./CarCompare.jsx";
 const router = createBrowserRouter(
   [
     {
-      path: "/",
+      path: "/car-project/",
       element: <Home />,
     },
 
