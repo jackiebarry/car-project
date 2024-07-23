@@ -6,6 +6,7 @@ import {
   CardHeader,
   Heading,
   CardFooter,
+  Flex,
 } from "@chakra-ui/react";
 import CarImage from "./CarImage.jsx";
 
@@ -25,17 +26,17 @@ function CarDetails({ car, setSavedCars }) {
           </Heading>
         </CardHeader>
         <CardBody>
-          <div className="car-image">
+          <Flex className="car-image" align="center">
             {loading && <CarLoading gifUrl={carLoading} />}
             {!loading && (
               <CarImage imageUrl={image} backupImageUrl={carThumbnail} />
             )}
-          </div>
-          <div className="car-overview">
+          </Flex>
+          <Flex className="car-overview" align="left">
             <p>Trim level: {trim}</p>
             <p>Description: {details.description}</p>
             <p>MSRP: ${details.msrp}</p>
-          </div>
+          </Flex>
         </CardBody>
         <CardFooter>
           {!saved && <SaveCar car={car} setSavedCars={setSavedCars} />}
