@@ -3,16 +3,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
 
-import router from "./Routes.jsx";
-
-import { RouterProvider } from "react-router-dom";
+import AppRouter from "./Routes.jsx";
 
 function App() {
   // return <div>goodbye</div>;
   return (
     <ChakraProvider>
       <>
-        <RouterProvider router={router} />
+        <AppRouter />
       </>
     </ChakraProvider>
   );
