@@ -7,9 +7,6 @@ import Resources from "./Resources.jsx";
 import CarCompare from "./CarCompare.jsx";
 
 const router = createBrowserRouter(
-  {
-    basename: "/car-project",
-  },
   [
     {
       path: "/",
@@ -33,7 +30,10 @@ const router = createBrowserRouter(
       path: "/CarCompare",
       element: <CarCompare />,
     },
-  ]
+  ],
+  {
+    basename: "/car-project",
+  }
 );
 
 export default router;
