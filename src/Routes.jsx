@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Home from "./Home.jsx";
 import SavedCars from "./SavedCars.jsx";
@@ -6,7 +6,7 @@ import FAQs from "./FAQs.jsx";
 import Resources from "./Resources.jsx";
 import CarCompare from "./CarCompare.jsx";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       path: "/",
@@ -32,7 +32,7 @@ const router = createHashRouter(
     },
   ],
   {
-    basename: "/car-project",
+    basename: import.meta.env.DEV ? "/" : "/car-project/",
   }
 );
 
